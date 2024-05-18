@@ -1,0 +1,11 @@
+{
+  "name": "fullstackproject-foodstore",
+  "version": "1.0.0",
+  "description": "Sistema para comercio online.",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "author": "",
+  "license": "ISC"
+}
