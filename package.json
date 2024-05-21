@@ -1,11 +1,24 @@
 {
   "name": "fullstackproject-foodstore",
   "version": "1.0.0",
-  "description": "Sistema para comercio online.",
+  "description": "Bem-vindo ao projeto Full Stack do nosso Delivery Online! Este projeto tem como objetivo criar uma aplicação web onde os usuários possam navegar e comprar alimentos de forma fácil e rápida. A aplicação terá quatro páginas principais: Login de Usuário, Registro de Usuário, Escolha de Produto e Finalizar Pedido.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/server.ts"
   },
+  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "prisma": "^5.14.0",
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.14.0",
+    "bcrypt": "^5.1.1",
+    "fastify": "^4.27.0"
+  }
 }
