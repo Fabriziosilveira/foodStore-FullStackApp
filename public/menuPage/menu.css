@@ -1,0 +1,36 @@
+.navbar-margin {
+    margin-bottom: 40px;
+}
+
+.navbar-custom {
+    height: 80px;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+}
+
+.card {
+    background-color: #1e1e1e;
+}
+
+.card-title {
+    color: white;
+}
+
+.card-text {
+    color: white;
+}
+
+.btn-cart {
+    position: relative;
+}
+
+.btn-cart .icon-cart {
+    font-size: 1.5rem;
+}
