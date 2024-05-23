@@ -12,22 +12,37 @@ model User {
   fullName  String
   email     String   @unique
   password  String
-  createdAt DateTime @default(now())
+  Orders    Orders[]
 
   @@map("users")
 }
 
 model Products {
-  id          String @id @default(uuid())
-  name        String
-  description String
-  price       Float
+  id           String         @id @default(uuid())
+  name         String
+  description  String
+  price        Float
+  OrderProduct OrderProduct[]
 
   @@map("produts")
 }
 
 model Orders {
-  id String @id @default(uuid())
+  id           String         @id @default(uuid())
+  userId       String
+  user         User           @relation(fields: [userId], references: [id])
+  OrderProduct OrderProduct[]
+  createdAt   DateTime      @default(now())
 
   @@map("orders")
+}
+
+model OrderProduct {
+  id        String   @id @default(uuid())
+  orderId   String
+  productId String
+  order     Orders   @relation(fields: [orderId], references: [id])
+  product   Products @relation(fields: [productId], references: [id])
+
+  @@map("order_products")
 }
