@@ -4,7 +4,9 @@ import { UserCreate } from '../interfaces/user.interface';
 
 export async function userRoutes(fastify: FastifyInstance){
     const userUseCase = new UserUseCase();
-    fastify.post<{Body: UserCreate}>('/', async (req, reply) => {      // Sigin Route
+
+    fastify.post<{Body: UserCreate}>('/register', async (req, reply) => {      
+        // Register Route
         const { fullName, email, password } = req.body
         try {
             const data = await userUseCase.create({
@@ -19,7 +21,14 @@ export async function userRoutes(fastify: FastifyInstance){
         }
     });
 
-    fastify.get('/', (req, reply) => {                           // Counsult Account
-        reply.send({ hello: 'world' });
-    })
+    fastify.post<{ Body: { email: string, password: string } }>('/login', async (req, reply) => {       
+        // Login Route
+        const { email, password } = req.body;
+        try {
+            const user = await userUseCase.validateUser(email, password);
+            return reply.send(user);
+        } catch (error) {
+            reply.send(error);
+        }
+    });
 }

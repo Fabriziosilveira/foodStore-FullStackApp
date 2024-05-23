@@ -16,16 +16,22 @@ class UserRepositoryPrisma implements UserRepository{
         return result;
     }
 
-    async findByEmail(email: string): Promise<User | null>{
+    async findByEmail(email: string): Promise<User | null> {
         const result = await prisma.user.findFirst({
-            where:{
-                email,
-            }                
+            where: { email }
         });
-
         return result || null;
     }
 
+    async findByEmailAndPassword(email: string, password: string): Promise<User | null> {
+        const result = await prisma.user.findFirst({
+            where: {
+                email,
+                password
+            }
+        });
+        return result || null;
+    }
 }
 
 export { UserRepositoryPrisma };

@@ -1,4 +1,4 @@
-import { UserCreate, UserRepository } from "../interfaces/user.interface";
+import { UserCreate, UserRepository, UserValidate } from "../interfaces/user.interface";
 import { UserRepositoryPrisma } from "../repositories/user.repository";
 
 class UserUseCase{
@@ -18,6 +18,14 @@ class UserUseCase{
         const result = await this.userRepository.create({ fullName, email, password});
 
         return result;
+    }
+
+    async validateUser(email: string, password: string): Promise<UserValidate | null> {
+        const user = await this.userRepository.findByEmailAndPassword(email, password);
+        if (!user) {
+            throw new Error("E-mail ou senha incorretos");
+        }
+        return user;
     }
 }
 
