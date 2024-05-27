@@ -36,22 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const response = await fetch('http://localhost:3100/users', {
+            const response = await fetch('http://localhost:3100/users/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(user)
+                body: JSON.stringify({ fullName, email, password })
             });
 
-            if (!response.ok) {
-                throw new Error('Erro ao cadastrar usuário');
-            }
-
             const result = await response.json();
-            console.log('Usuário cadastrado com sucesso:', result);
+            console.log('Usuário Cadastrado com sucesso:', result);
+
+            window.location.href = '../loginPage/login.html';
         } catch (error) {
-            console.error('Erro:', error);
+
         }
     });
 });
