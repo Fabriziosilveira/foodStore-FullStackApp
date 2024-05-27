@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = emailInput.value;
         const password = passwordInput.value;
 
-        // Simple client-side validation
         if (!validateEmail(email)) {
             emailInput.classList.add('is-invalid');
             emailError.style.display = 'block';
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch('http://localhost:3100/users/login', {
+            const login = await fetch('http://localhost:3100/users/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -30,12 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({ email, password })
             });
 
-            if (!response.ok) {
+            if (!login.ok) {
                 throw new Error('E-mail ou senha incorretos');
 
             }
 
-            const result = await response.json();
+            const result = await login.json();
             console.log('Usuário autenticado com sucesso:', result);
 
             window.location.href = '../menuPage/menu.html';
