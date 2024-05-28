@@ -69,16 +69,14 @@ Após selecionar os produtos, os usuários serão redirecionados para a página 
 - **SQLite:** Banco de Dados realacional.
 
 ### Autenticação e Segurança
-- **JWT (JSON Web Token):** Para autenticação segura dos usuários.
 - **bcrypt:** Para criptografia de senhas.
 
 ## Regras de Negócio
 
 ### Cadastro de Usuários
 
-- Deve ser feito com: Nome, Sobrenome, Email e Senha.
+- Deve ser feito com: Nome Completo, Email e Senha.
 - Se conter na base de dados um endereço de Email já cadastrado na base de dados informar que já possui um cadastro.
-- Senha deve conter pelo menos uma letra maiúscula, um número e um caracter especial. Não deverão ser permitidos espaços.
 
 ### Login de Usuários
 
@@ -92,3 +90,4 @@ Após selecionar os produtos, os usuários serão redirecionados para a página 
 ### Finalizar Pedido
 
 - Ao selecionar "Finalizar Compra", deve ser feita a confirmação do pedido e o reinício do carrinho removendo os itens para uma possível nova compra.
+
