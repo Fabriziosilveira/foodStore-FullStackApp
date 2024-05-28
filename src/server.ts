@@ -1,6 +1,7 @@
 import { FastifyInstance, fastify } from "fastify";
 import { userRoutes } from './routes/user.routes';
 import fastifyCors from '@fastify/cors';
+import { productsRoutes } from "./routes/products.routes";
 
 const app: FastifyInstance = fastify();
 
@@ -16,6 +17,10 @@ app.register(userRoutes, {
 
 app.register(userRoutes, {
     prefix: '/login',
+})
+
+app.register(productsRoutes, {
+    prefix: '/menu'
 })
 
 app.listen({ port: 3100 }, (err, address) => {
