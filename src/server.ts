@@ -17,11 +17,11 @@ app.register(userRoutes, {
 
 app.register(userRoutes, {
     prefix: '/login',
-})
+});
 
 app.register(productsRoutes, {
     prefix: '/menu'
-})
+});
 
 app.listen({ port: 3100 }, (err, address) => {
     if (err) {
