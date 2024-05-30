@@ -34,3 +34,9 @@ body {
 .btn-cart .icon-cart {
     font-size: 1.5rem;
 }
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: xx-large;
+    margin-left: 20px;
+}
