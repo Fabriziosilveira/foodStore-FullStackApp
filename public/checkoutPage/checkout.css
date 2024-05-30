@@ -1,0 +1,20 @@
+body {
+    background-color: #121212;
+    color: white;
+}
+
+.navbar-margin {
+    margin-bottom: 40px;
+}
+
+.navbar-custom {
+    height: 80px;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.list-group-item {
+    border: none;
+}
