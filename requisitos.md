@@ -4,6 +4,25 @@
 
 Bem-vindo ao projeto Full Stack do nosso Delivery Online! Este projeto tem como objetivo criar uma aplicação web onde os usuários possam navegar e comprar alimentos de forma fácil e rápida. A aplicação terá quatro páginas principais: Login de Usuário, Registro de Usuário, Escolha de Produto e Finalizar Pedido.
 
+#### Clone o repositório
+
+```bash
+git clone https://github.com/Fabriziosilveira/foodStore-FullStackApp.git
+```
+#### Entre na pasta
+
+```bash
+cd foodStore-FullStackApp
+```
+
+#### Inicie o servidor
+
+```bash
+npm start
+```
+
+#### Para começar o fluxo de páginas começe abrindo o arquivo ``` login.html```, para isso busque o arquvio nos diretórios ```foodStore-FullStackApp/public/loginPage/login.html ```.
+
 ## Estrutura do Projeto
 
 ### 1. Login de Usuário
