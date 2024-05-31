@@ -89,24 +89,3 @@ Após selecionar os produtos, os usuários serão redirecionados para a página 
 
 ### Autenticação e Segurança
 - **bcrypt:** Para criptografia de senhas.
-
-## Regras de Negócio
-
-### Cadastro de Usuários
-
-- Deve ser feito com: Nome Completo, Email e Senha.
-- Se conter na base de dados um endereço de Email já cadastrado na base de dados informar que já possui um cadastro.
-
-### Login de Usuários
-
-- Validar Email e Senha para liberar o acesso, caso for negado informe o erro.
-
-### Escolha do Produto
-
-- Ao apertar o botão "Adicionar ao carrinho" o pedido deve ser criado um pedido que tenha o item.
-- Ao abrir o carrinho terá que ter a opção de excluir o item do carrinho atual.
-
-### Finalizar Pedido
-
-- Ao selecionar "Finalizar Compra", deve ser feita a confirmação do pedido e o reinício do carrinho removendo os itens para uma possível nova compra.
-
